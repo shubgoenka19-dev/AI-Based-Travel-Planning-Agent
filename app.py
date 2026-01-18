@@ -13,7 +13,7 @@ vit_student = st.checkbox("Are you a VIT student? (15% discount)")
 
 if st.button("Generate Travel Plan") and destination:
 
-    # ---------------- AGENT (MAIN OUTPUT) ----------------
+   
     st.subheader("🧠 Travel Plan & Itinerary")
 
     agent_prompt = f"""
@@ -44,7 +44,7 @@ if st.button("Generate Travel Plan") and destination:
 
     agent_response = llm.invoke(agent_prompt).content
     st.write(agent_response)
-    # ---------------- FOOD & CAFE RECOMMENDATIONS (AUTO, LLM-DRIVEN) ----------------
+    #FOOD & CAFE RECOMMENDATIONS (AUTO, LLM-DRIVEN)
     st.subheader("🍽️ Food & Cafe Recommendations")
 
     food_prompt = f"""
@@ -106,7 +106,7 @@ if st.button("Generate Travel Plan") and destination:
             st.markdown(f"- **{place}**  \n  📍 [View on Maps]({map_link})")
 
 
-    # ---------------- HOTEL DEALS (ONLY ONCE, BOTTOM) ----------------
+    # HOTEL DEALS (ONLY ONCE, BOTTOM)
     st.subheader("🏨 Hotel Deals")
 
     hotels = search_hotels(destination)
@@ -124,3 +124,4 @@ if st.button("Generate Travel Plan") and destination:
         - Deal: {h['deal']}
         - 📍 [View nearby hotels on Google Maps]({map_link})
         """)
+
